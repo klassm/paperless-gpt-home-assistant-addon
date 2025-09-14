@@ -1,0 +1,75 @@
+---
+name: Paperless-gpt
+version: dev-2025-09-18_17_00
+slug: paperless-gpt
+url: https://github.com/icereed/paperless-gpt
+init: false
+ingress: true
+ingress_stream: true
+ingress_port: 8080
+panel_icon: mdi:leaf
+panel_admin: false
+homeassistant_api: true
+hassio_api: true
+description:
+  paperless-gpt seamlessly pairs with paperless-ngx to generate AI-powered document titles and tags, saving you hours of manual sorting. While other tools may offer AI chat features, paperless-gpt stands out by supercharging OCR with LLMs-ensuring high accuracy, even with tricky scans. If you're craving next-level text extraction and effortless document organization, this is your solution.
+arch:
+  - aarch64
+  - amd64
+startup: system
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: Web interface (Not required for Ingress)
+map:
+  - addon_config:rw
+  - share:rw
+  - ssl
+options:
+  paperless_manual_tag: "paperless-gpt"
+  paperless_auto_tag: "paperless-gpt-auto"
+  paperless_base_url: "http://homeassistant.local:xxxx"
+schema:
+  paperless_base_url: str
+  paperless_api_token: str
+  paperless_manual_tag: str?
+  paperless_auto_tag: str?
+  llm_provider: str?
+  llm_model: str?
+  openai_api_key: str?
+  openai_api_type: str?
+  openai_base_url: str?
+  ollama_host: str?
+  token_limit: int?
+  llm_language: str?
+  ocr_provider: str?
+  vision_llm_provider: str?
+  vision_llm_model: str?
+  azure_docai_endpoint: str?
+  azure_docai_key: str?
+  google_project_id: str?
+  google_location: str?
+  google_processor_id: str?
+  mistral_api_key: str?
+  googleai_api_key: str?
+  googleai_thinking_budget: int?
+  docling_url: str?
+  create_local_hocr: bool?
+  local_hocr_path: str?
+  create_local_pdf: bool?
+  local_pdf_path: str?
+  pdf_upload: bool?
+  pdf_replace: bool?
+  pdf_copy_metadata: bool?
+  pdf_ocr_tagging: bool?
+  pdf_ocr_complete_tag: str?
+  pdf_skip_existing_ocr: bool?
+  auto_ocr_tag: str?
+  ocr_limit_pages: int?
+  log_level: str?
+  listen_interface: str?
+  auto_generate_title: bool?
+  auto_generate_tags: bool?
+  auto_generate_correspondents: bool?
+  auto_generate_created_date: bool?
+  correspondent_black_list: str?

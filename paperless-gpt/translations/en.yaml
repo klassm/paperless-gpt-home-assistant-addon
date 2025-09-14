@@ -1,0 +1,131 @@
+---
+configuration:
+  paperless_base_url:
+    name: Paperless Base URL
+    description: URL of your paperless-ngx instance (e.g. http://paperless-ngx:8000)
+  paperless_api_token:
+    name: Paperless API Token
+    description: API token for paperless-ngx. Generate one in paperless-ngx admin.
+  paperless_manual_tag:
+    name: Manual Processing Tag
+    description: Tag for manual processing. Default: paperless-gpt
+  paperless_auto_tag:
+    name: Automatic Processing Tag
+    description: Tag for automatic processing. Default: paperless-gpt-auto
+  llm_provider:
+    name: LLM Provider
+    description: AI backend (openai, ollama, azure, googleai, mistral)
+  llm_model:
+    name: LLM Model
+    description: AI model name (e.g., gpt-4o, qwen3:8b)
+  openai_api_key:
+    name: OpenAI API Key
+    description: OpenAI API key (required if using OpenAI)
+  openai_api_type:
+    name: OpenAI API Type
+    description: Set to 'azure' to use Azure OpenAI Service
+  openai_base_url:
+    name: OpenAI Base URL
+    description: Base URL for OpenAI API. For Azure OpenAI, set to your deployment URL
+  ollama_host:
+    name: Ollama Host
+    description: Ollama server URL (e.g. http://host.docker.internal:11434)
+  token_limit:
+    name: Token Limit
+    description: Maximum tokens allowed for prompts/content. Set to 0 to disable limit
+  llm_language:
+    name: LLM Language
+    description: Likely language for documents (e.g. English)
+  ocr_provider:
+    name: OCR Provider
+    description: OCR provider to use (llm, azure, google_docai, docling)
+  vision_llm_provider:
+    name: Vision LLM Provider
+    description: AI backend for LLM OCR (openai or ollama)
+  vision_llm_model:
+    name: Vision LLM Model
+    description: Model name for LLM OCR (e.g. minicpm-v)
+  azure_docai_endpoint:
+    name: Azure Document Intelligence Endpoint
+    description: Azure Document Intelligence endpoint
+  azure_docai_key:
+    name: Azure Document Intelligence Key
+    description: Azure Document Intelligence API key
+  google_project_id:
+    name: Google Project ID
+    description: Google Cloud project ID
+  google_location:
+    name: Google Location
+    description: Google Cloud region (e.g. us, eu)
+  google_processor_id:
+    name: Google Processor ID
+    description: Document AI processor ID
+  mistral_api_key:
+    name: Mistral API Key
+    description: Mistral API key
+  googleai_api_key:
+    name: GoogleAI API Key
+    description: Google Gemini API key
+  googleai_thinking_budget:
+    name: GoogleAI Thinking Budget
+    description: Controls Gemini "thinking" budget. Set to 0 to disable thinking
+  docling_url:
+    name: Docling Server URL
+    description: URL of the Docling server instance
+  create_local_hocr:
+    name: Create Local hOCR
+    description: Whether to save hOCR files locally
+  local_hocr_path:
+    name: Local hOCR Path
+    description: Path where hOCR files will be saved
+  create_local_pdf:
+    name: Create Local PDF
+    description: Whether to save enhanced PDFs locally
+  local_pdf_path:
+    name: Local PDF Path
+    description: Path where PDF files will be saved
+  pdf_upload:
+    name: PDF Upload
+    description: Whether to upload enhanced PDFs to paperless-ngx
+  pdf_replace:
+    name: PDF Replace
+    description: Whether to delete the original document after uploading the enhanced version
+  pdf_copy_metadata:
+    name: PDF Copy Metadata
+    description: Whether to copy metadata from original to new document
+  pdf_ocr_tagging:
+    name: PDF OCR Tagging
+    description: Whether to add a tag to mark documents as OCR-processed
+  pdf_ocr_complete_tag:
+    name: PDF OCR Complete Tag
+    description: Tag used to mark documents as OCR-processed
+  pdf_skip_existing_ocr:
+    name: PDF Skip Existing OCR
+    description: Whether to skip OCR processing for PDFs that already have OCR
+  auto_ocr_tag:
+    name: Automatic OCR Tag
+    description: Tag for automatically processing docs with OCR
+  ocr_limit_pages:
+    name: OCR Limit Pages
+    description: Limit the number of pages for OCR. Set to 0 for no limit
+  log_level:
+    name: Log Level
+    description: Application log level (info, debug, warn, error)
+  listen_interface:
+    name: Listen Interface
+    description: Network interface to listen on
+  auto_generate_title:
+    name: Auto Generate Title
+    description: Generate titles automatically if paperless-gpt-auto is used
+  auto_generate_tags:
+    name: Auto Generate Tags
+    description: Generate tags automatically if paperless-gpt-auto is used
+  auto_generate_correspondents:
+    name: Auto Generate Correspondents
+    description: Generate correspondents automatically if paperless-gpt-auto is used
+  auto_generate_created_date:
+    name: Auto Generate Created Date
+    description: Generate created dates automatically if paperless-gpt-auto is used
+  correspondent_black_list:
+    name: Correspondent Black List
+    description: Comma-separated list of names to exclude from correspondent suggestions

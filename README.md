@@ -1,54 +1,40 @@
-# Benoit Anastay Addon : Paperless-ngx
+# klassm Home Assistant add-on repository
 
-[![GitHub Release][releases-shield]][releases]
-![Project Stage][project-stage-shield]
-[![License][license-shield]](LICENSE.md)
+This repository contains the paperless-gpt add-on for Home Assistant.
 
-![Supports armhf Architecture][armhf-shield]
-![Supports armv7 Architecture][armv7-shield]
+Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
+
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fklassm%2Fpaperless-gpt-home-assistant-addon)
+
+## Add-ons
+
+This repository contains the following add-ons
+
+### [Paperless-gpt](./paperless-gpt)
+
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
-![Supports i386 Architecture][i386-shield]
 
-[![Github Actions][github-actions-shield]][github-actions]
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
+_paperless-gpt seamlessly pairs with paperless-ngx to generate AI-powered document titles and tags, saving you hours of manual sorting. While other tools may offer AI chat features, paperless-gpt stands out by supercharging OCR with LLMs—ensuring high accuracy, even with tricky scans. If you're craving next-level text extraction and effortless document organization, this is your solution._
 
-Paperless is an application that manages your personal documents. With the help of a document scanner, paperless transforms your wieldy physical document binders into a searchable archive and provides many utilities for finding and managing your documents.
+<!--
 
-This repository is a custom addon to run paperless-ngx in Home Assistant. Click the button below to install it.
-
-## Installation
-
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
-
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
-
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
-
-1. Click the "Install" button to install the add-on.
-1. Start the "Paperless-ngx" add-on.
-1. Check the logs of the "Paperless-ngx" add-on to see it in action.
+Notes to developers:
+- While developing comment out the 'image' key from 'paperless-gpt/config.yaml' to make the supervisor build the addon
+  - Remember to put this back when pushing up your changes.
+- When you merge to the 'main' branch of your repository a new build will be triggered.
+  - Make sure you adjust the 'version' key in 'paperless-gpt/config.yaml' when you do that.
+  - Make sure you update 'paperless-gpt/CHANGELOG.md' when you do that.
+  - The first time this runs you might need to adjust the image configuration on github container registry to make it public
+  - You may also need to adjust the github Actions configuration (Settings > Actions > General > Workflow > Read & Write)
+- Adjust the 'image' key in 'paperless-gpt/config.yaml' so it points to your username instead of 'home-assistant'.
+  - This is where the build images will be published to.
+- Rename the example directory.
+  - The 'slug' key in 'paperless-gpt/config.yaml' should match the directory name.
+- Adjust all keys/url's that points to 'home-assistant' to now point to your user/fork.
+- Share your repository on the forums https://community.home-assistant.io/c/projects/9
+- Do awesome stuff!
+ -->
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
-[i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/BenoitAnastay/paperless-home-assistant-addon.svg
-[commits]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/commits/main
-[contributors]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/graphs/contributors
-[docs]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/blob/main/paperless-ngx/DOCS.md
-[github-actions-shield]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/workflows/CI/badge.svg
-[github-actions]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/actions
-[issue]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/issues
-[license-shield]: https://img.shields.io/github/license/BenoitAnastay/paperless-home-assistant-addon.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-stable-green.svg
-[releases-shield]: https://img.shields.io/github/release/BenoitAnastay/paperless-home-assistant-addon.svg
-[releases]: https://github.com/BenoitAnastay/paperless-home-assistant-addon/releases
-[repository]: https://github.com/BenoitAnastay/home-assistant-addons-repository
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=ca5234a0_paperless-ngx&repository_url=https%3A%2F%2Fgithub.com%2FBenoitAnastay%2Fhome-assistant-addons-repository
-[addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
